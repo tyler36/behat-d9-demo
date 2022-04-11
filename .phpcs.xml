@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="drupal_core">
+  <description>Default PHP CodeSniffer configuration for Drupal core.</description>
+  <file>.</file>
+
+  <!--  Turn colors ON  -->
+  <arg name="colors"/>
+
+  <!-- Additional file types -->
+  <arg name="extensions" value="css,info,inc,install,module,php,profile,md,test,theme,txt,yml"/>
+
+  <!--Exclude third party code.-->
+  <exclude-pattern>*/vendor/*</exclude-pattern>
+  <!--Exclude folders used by common frontend tools. These folders match the file_scan_ignore_directories setting in default.settings.php-->
+  <exclude-pattern>*/node_modules/*</exclude-pattern>
+  <exclude-pattern>*/bower_components/*</exclude-pattern>
+
+  <exclude-pattern>*/core/*</exclude-pattern>
+  <exclude-pattern>*/contrib/*</exclude-pattern>
+
+  <rule ref="Drupal" />
+  <rule ref="DrupalPractice" />
+
+  <!-- OVERRIDE: Test method names do not need to be Camel Caps -->
+  <rule ref="Drupal.NamingConventions.ValidFunctionName.ScopeNotCamelCaps">
+      <exclude-pattern>*/tests/*</exclude-pattern>
+  </rule>
+</ruleset>
