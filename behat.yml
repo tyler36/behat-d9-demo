@@ -9,10 +9,22 @@ default:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
   extensions:
-    Behat\MinkExtension:
-      goutte:
-        guzzle_parameters:
-          verify: false
-      base_url: https://behat-demo.ddev.site  # Replace with your site's URL
+    DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
+    Drupal\MinkExtension:
+        base_url: https://behat-demo.ddev.site
+        ajax_timeout: 30
+        # goutte: ~
+        browser_name: chrome
+        sessions:
+            default:
+                chrome:
+                    api_url: "http://chrome:9222"
+                    socket_timeout: 20
+                    download_behavior: allow
+                    validate_certificate: false
+    # Using drupalextension "drupal/drupal-extension": "v4.0.0rc1" or above. Use Behat\DrupalExtension if
     Drupal\DrupalExtension:
-      blackbox: ~
+        api_driver: 'drush'
+        blackbox: ~
+        drush:
+            root: /var/www/html/web
