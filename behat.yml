@@ -1,0 +1,17 @@
+# behat.yml
+default:
+  suites:
+    default:
+      contexts:
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+  extensions:
+    Behat\MinkExtension:
+      goutte:
+        guzzle_parameters:
+          verify: false
+      base_url: https://behat-demo.ddev.site  # Replace with your site's URL
+    Drupal\DrupalExtension:
+      blackbox: ~
