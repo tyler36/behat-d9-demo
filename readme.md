@@ -2,6 +2,8 @@
 
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Drivers](#drivers)
+  - [Goutte](#goutte)
 - [Errors](#errors)
   - [cURL error 60: SSL certificate problem](#curl-error-60-ssl-certificate-problem)
 
@@ -89,6 +91,15 @@ $ ./vendor/bin/behat -dl --lang=ja
 ```shell
 behat --story-syntax --lang=ja
 ```
+
+## Drivers
+
+- [list of supported drivers](https://mink.behat.org/en/latest/guides/drivers.html)
+
+### Goutte
+
+- command-line browser
+- does **NOT** support javascript
 
 ## Errors
 
