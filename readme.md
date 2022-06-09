@@ -7,6 +7,7 @@
 - [Errors](#errors)
   - [cURL error 60: SSL certificate problem](#curl-error-60-ssl-certificate-problem)
 - [Cypress-local](#cypress-local)
+  - [Add cypress-cucumber-preprocessor](#add-cypress-cucumber-preprocessor)
 
 ## Requirements
 
@@ -127,7 +128,6 @@ $ behat
           verify: false
 ```
 
-
 ## Cypress-local
 
 - Install cypress
@@ -156,4 +156,38 @@ cypress install
 
 ```shell
 cypress open
+```
+
+### Add cypress-cucumber-preprocessor
+
+- Install `cypress-cucumber-preprocessor`
+
+```shell
+npm install cypress-cucumber-preprocessor --save-dev
+```
+
+- Add configuration plugin to `./cypress/plugins/index.js`
+
+```js
+const cucumber = require('cypress-cucumber-preprocessor').default
+
+module.exports = (on, config) => {
+  on('file:preprocessor', cucumber())
+}
+```
+
+- update `package.json`
+
+```json
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
+```
+
+- update `cypress.json` to include `*.feature` files
+
+```json
+  {
+    "testFiles": "**/*.feature"
+  }
 ```
