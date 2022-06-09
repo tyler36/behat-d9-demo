@@ -6,6 +6,7 @@
   - [Goutte](#goutte)
 - [Errors](#errors)
   - [cURL error 60: SSL certificate problem](#curl-error-60-ssl-certificate-problem)
+- [Cypress-local](#cypress-local)
 
 ## Requirements
 
@@ -124,4 +125,35 @@ $ behat
       goutte:
         guzzle_parameters:
           verify: false
+```
+
+
+## Cypress-local
+
+- Install cypress
+
+```shell
+npm install cypress@^9 --save-dev
+```
+
+- Run install config
+
+```shell
+cypress install
+```
+
+- Add `cypress.json` config; should include updated `baseUrl`
+
+```json
+{
+    "baseUrl": "https://behat-demo.ddev.site"
+}
+```
+
+- Remove unused tests in `./cypress.intergration`
+- Add additional test
+- Run Cypress
+
+```shell
+cypress open
 ```
