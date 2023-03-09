@@ -22,7 +22,7 @@ default:
                     socket_timeout: 20
                     download_behavior: allow
                     validate_certificate: false
-    # Using drupalextension "drupal/drupal-extension": "v4.0.0rc1" or above. Use Behat\DrupalExtension if
+    # Using drupal-extension "drupal/drupal-extension": "v4.0.0rc1" or above. Use Behat\DrupalExtension if
     Drupal\DrupalExtension:
         api_driver: 'drush'
         blackbox: ~

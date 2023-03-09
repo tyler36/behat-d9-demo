@@ -18,7 +18,7 @@ Based on `Drupal 9.3`, it has the following requirements:
 
 Based on [How to use behavior-driven development in Drupal with Behat](https://opensource.com/article/19/3/how-drupal-behat)
 
-- Install behat with Drupal extenstions.
+- Install Behat with Drupal extensions.
 
 ```shell
 composer require drupal/drupal-extension --dev -W
